@@ -3,7 +3,7 @@ import { Header } from "../Header";
 import { Column } from "../Column";
 import { IntroParagraphs } from "../IntroParagraphs";
 import GifSearch from "../../containers/gif-search";
-import { WeirdnessSlider } from "../WeirdnessSlider";
+import WeirdnessSlider from "../../containers/weirdness-slider";
 
 export const App = props => {
   return (
