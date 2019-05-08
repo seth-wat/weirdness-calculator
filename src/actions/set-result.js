@@ -1,10 +1,6 @@
 import { SET_RESULT } from "./index";
 
-export const setResult = (url, weirdness, isLoading) => ({
+export const setResult = (weirdnessLevel, result) => ({
   type: SET_RESULT,
-  payload: {
-    url,
-    weirdness,
-    isLoading
-  }
+  payload: { weirdnessLevel, result }
 });

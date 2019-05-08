@@ -5,7 +5,8 @@ export const formRequest = (term, weirdness) =>
 
 export const getGif = async (term, weirdness) => {
   const res = await fetch(formRequest(term, weirdness));
-  return res.json();
+  const json = await res.json();
+  return extractGifFromResponse(json);
 };
 
 export const extractGifFromResponse = json => json.data.images.original.url;
