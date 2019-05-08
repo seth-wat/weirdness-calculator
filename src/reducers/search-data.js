@@ -22,3 +22,7 @@ export const searchData = (state = defaultState, action) => {
     }
   });
 };
+
+export const getSubmittedTerm = state => state.searchData.submittedTerm;
+
+export const getWeirdnessLevel = state => state.searchData.weirdnessLevel;

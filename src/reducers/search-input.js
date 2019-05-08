@@ -17,3 +17,5 @@ export const searchInput = (state = defaultState, action) => {
     }
   });
 };
+
+export const getSearchInput = state => state.searchInput.value;
