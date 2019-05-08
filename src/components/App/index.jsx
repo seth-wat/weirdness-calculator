@@ -2,8 +2,7 @@ import React from "react";
 import { Header } from "../Header";
 import { Column } from "../Column";
 import { IntroParagraphs } from "../IntroParagraphs";
-import { Row } from "../Row";
-import { GifSearch } from "../GifSearch";
+import GifSearch from "../../containers/gif-search";
 
 export const App = props => {
   return (
