@@ -1,13 +1,13 @@
 import produce from "immer";
-import { SET_SEARCH_TERM } from "../actions";
+import { UPDATE_SEARCH_INPUT } from "../actions";
 
 export const defaultState = {
   value: ""
 };
-export const gifSearch = (state = defaultState, action) => {
+export const searchInput = (state = defaultState, action) => {
   return produce(state, draft => {
     switch (action.type) {
-      case SET_SEARCH_TERM: {
+      case UPDATE_SEARCH_INPUT: {
         draft.value = action.payload;
         return draft;
       }

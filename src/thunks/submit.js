@@ -3,10 +3,10 @@ import { extractGifFromResponse, getGif } from "../requests/weirdness-endpoint";
 
 export const submit = async (dispatch, getState) => {
   const state = getState();
-  dispatch(setSubmittedTerm(state.gifSearch.value));
+  dispatch(setSubmittedTerm(state.searchInput.value));
   try {
     const json = await getGif(
-      state.gifSearch.value,
+      state.searchInput.value,
       state.searchData.weirdnessLevel
     );
     const gifUrl = extractGifFromResponse(json);
