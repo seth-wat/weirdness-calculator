@@ -4,6 +4,7 @@ import { Column } from "../Column";
 import { IntroParagraphs } from "../IntroParagraphs";
 import GifSearch from "../../containers/gif-search";
 import WeirdnessSlider from "../../containers/weirdness-slider";
+import { getGif } from "../../requests/weirdness-endpoint";
 
 export const App = props => {
   return (
