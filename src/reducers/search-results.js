@@ -1,6 +1,6 @@
 import produce from "immer";
 import { SET_RESULT } from "../actions";
-import { getWeirdnessLevel } from "./search-data";
+import { getSubmittedTerm, getWeirdnessLevel } from "./search-data";
 import { createSelector } from "reselect";
 
 export const generateResult = (
@@ -31,7 +31,7 @@ export const searchResults = (state = defaultState, action) => {
     switch (action.type) {
       case SET_RESULT: {
         const { weirdnessLevel, result } = action.payload;
-        draft[weirdnessLevel] = result;
+        draft.data[weirdnessLevel] = result;
         return draft;
       }
       default: {
@@ -47,5 +47,8 @@ export const getResultByWeirdness = state =>
   getResults(state)[getWeirdnessLevel(state)];
 export const resultShouldBeFetched = state => {
   const result = getResultByWeirdness(state);
-  return result.isLoading === false && result.url === null;
+  const searchTerm = getSubmittedTerm(state);
+  return (
+    result.isLoading === false && result.url === null && searchTerm.length > 0
+  );
 };
