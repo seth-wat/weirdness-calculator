@@ -5,7 +5,7 @@ export const defaultState = {
   value: ""
 };
 export const gifSearch = (state = defaultState, action) => {
-  produce(state, draft => {
+  return produce(state, draft => {
     switch (action.type) {
       case SET_SEARCH_TERM: {
         draft.value = action.payload;
