@@ -3,6 +3,7 @@ import { Header } from "../Header";
 import { Column } from "../Column";
 import { IntroParagraphs } from "../IntroParagraphs";
 import GifSearch from "../../containers/gif-search";
+import { WeirdnessSlider } from "../WeirdnessSlider";
 
 export const App = props => {
   return (
@@ -12,6 +13,7 @@ export const App = props => {
         <IntroParagraphs />
       </Column>
       <GifSearch />
+      <WeirdnessSlider />
     </Column>
   );
 };
