@@ -41,11 +41,13 @@ export const searchResults = (state = defaultState, action) => {
 };
 
 export const getResults = state => state.searchResults.data;
+
 export const getResultByWeirdness = createSelector(
   getResults,
   getWeirdnessLevel,
   (results, weirdnessLevel) => results[weirdnessLevel]
 );
+
 export const resultShouldBeFetched = createSelector(
   getResultByWeirdness,
   getSubmittedTerm,
@@ -54,7 +56,25 @@ export const resultShouldBeFetched = createSelector(
     result.url === null &&
     submittedTerm.length > 0
 );
-export const getSelectedURL = createSelector(
+
+export const getResultURL = createSelector(
   getResultByWeirdness,
   result => result.url
+);
+
+export const isResultEmpty = createSelector(
+  getResultURL,
+  url => {
+    return url === null;
+  }
+);
+
+export const didResultError = createSelector(
+  getResultByWeirdness,
+  result => result.didError
+);
+
+export const isResultLoading = createSelector(
+  getResultByWeirdness,
+  result => result.isLoading
 );

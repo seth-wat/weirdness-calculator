@@ -10,10 +10,14 @@
   }
 }
 
-p.default-gif-loading {
+span.default-gif-loading {
+  text-align: center;
+  margin: 0;
   animation: loading 4s infinite;
 }
 
-p.default-gif {
+span.default-gif {
+  text-align: center;
+  margin: 0;
   font-size: 8rem;
 }

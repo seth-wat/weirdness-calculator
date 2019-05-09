@@ -4,11 +4,11 @@ import { Column } from "../Column";
 import { IntroParagraphs } from "../IntroParagraphs";
 import GifSearch from "../../containers/gif-search";
 import WeirdnessSlider from "../../containers/weirdness-slider";
-import ResultGif from "../../containers/result-gif";
 import { Row } from "../Row";
 import { Title } from "../Title";
+import SearchResult from "../../containers/search-result";
 
-export const App = props => {
+export const App = () => {
   return (
     <Column styleOverrides={{ height: "100vh" }}>
       <Header />
@@ -22,7 +22,7 @@ export const App = props => {
         >
           <Title />
           <Row styleOverrides={{ justifyContent: "center" }}>
-            <ResultGif width={"250px"} height={"250px"} />
+            <SearchResult />
           </Row>
           <Row
             styleOverrides={{
