@@ -4,7 +4,8 @@ import { Column } from "../Column";
 import { IntroParagraphs } from "../IntroParagraphs";
 import GifSearch from "../../containers/gif-search";
 import WeirdnessSlider from "../../containers/weirdness-slider";
-import { getGif } from "../../requests/weirdness-endpoint";
+import ResultGif from "../../containers/result-gif";
+import { DefaultGif } from "../DefaultGif";
 
 export const App = props => {
   return (
@@ -13,6 +14,8 @@ export const App = props => {
       <Column>
         <IntroParagraphs />
       </Column>
+      <ResultGif height={400} width={400} />
+      <DefaultGif />
       <GifSearch />
       <WeirdnessSlider />
     </Column>

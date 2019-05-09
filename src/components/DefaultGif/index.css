@@ -1,0 +1,19 @@
+@keyframes loading {
+  0%,
+  100% {
+    font-size: 5rem;
+    transform-origin: center;
+  }
+  50% {
+    font-size: 8rem;
+    transform-origin: center;
+  }
+}
+
+p.default-gif-loading {
+  animation: loading 4s infinite;
+}
+
+p.default-gif {
+  font-size: 8rem;
+}
