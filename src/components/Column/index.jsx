@@ -6,7 +6,6 @@ export const Column = props => {
       style={{
         display: "flex",
         flexDirection: "column",
-        height: "100%",
         ...props.styleOverrides
       }}
     >

@@ -4,20 +4,29 @@ import { Column } from "../Column";
 import { IntroParagraphs } from "../IntroParagraphs";
 import GifSearch from "../../containers/gif-search";
 import WeirdnessSlider from "../../containers/weirdness-slider";
-import ResultGif from "../../containers/result-gif";
-import { DefaultGif } from "../DefaultGif";
+import { Row } from "../Row";
 
 export const App = props => {
   return (
     <Column styleOverrides={{ height: "100vh" }}>
       <Header />
-      <Column>
-        <IntroParagraphs />
+      <Column styleOverrides={{ width: "60%" }}>
+        <Column styleOverrides={{ border: "0 1rem 1rem 0 solid #000" }}>
+          <IntroParagraphs />
+          <GifSearch />
+        </Column>
+        <Column styleOverrides={{ backgroundColor: "#FFCC80" }}>
+          <Row
+            styleOverrides={{
+              margin: "0rem 1rem 0rem 1rem",
+              alignSelf: "center",
+              maxWidth: "75%"
+            }}
+          >
+            <WeirdnessSlider />
+          </Row>
+        </Column>
       </Column>
-      <ResultGif height={400} width={400} />
-      <DefaultGif />
-      <GifSearch />
-      <WeirdnessSlider />
     </Column>
   );
 };
