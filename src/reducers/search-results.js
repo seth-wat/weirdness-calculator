@@ -10,7 +10,6 @@ export const generateResult = (
 ) => ({ isLoading, url, didError });
 
 export const defaultState = {
-  selectedResult: generateResult(),
   data: {
     0: generateResult(),
     1: generateResult(),
@@ -42,13 +41,20 @@ export const searchResults = (state = defaultState, action) => {
 };
 
 export const getResults = state => state.searchResults.data;
-export const getSeletedResult = state => state.searchResults.selectedResult;
-export const getResultByWeirdness = state =>
-  getResults(state)[getWeirdnessLevel(state)];
-export const resultShouldBeFetched = state => {
-  const result = getResultByWeirdness(state);
-  const searchTerm = getSubmittedTerm(state);
-  return (
-    result.isLoading === false && result.url === null && searchTerm.length > 0
-  );
-};
+export const getResultByWeirdness = createSelector(
+  getResults,
+  getWeirdnessLevel,
+  (results, weirdnessLevel) => results[weirdnessLevel]
+);
+export const resultShouldBeFetched = createSelector(
+  getResultByWeirdness,
+  getSubmittedTerm,
+  (result, submittedTerm) =>
+    result.isLoading === false &&
+    result.url === null &&
+    submittedTerm.length > 0
+);
+export const getSelectedURL = createSelector(
+  getResultByWeirdness,
+  result => result.url
+);
