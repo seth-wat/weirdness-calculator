@@ -5,6 +5,7 @@ import { IntroParagraphs } from "../IntroParagraphs";
 import GifSearch from "../../containers/gif-search";
 import WeirdnessSlider from "../../containers/weirdness-slider";
 import { Row } from "../Row";
+import { Title } from "../Title";
 
 export const App = props => {
   return (
@@ -16,6 +17,7 @@ export const App = props => {
           <GifSearch />
         </Column>
         <Column styleOverrides={{ backgroundColor: "#FFCC80" }}>
+          <Title />
           <Row
             styleOverrides={{
               margin: "0rem 1rem 0rem 1rem",
