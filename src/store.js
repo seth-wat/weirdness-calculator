@@ -3,7 +3,13 @@ import { searchInput } from "./reducers/search-input";
 import { searchData } from "./reducers/search-data";
 import thunk from "redux-thunk";
 import { searchResults } from "./reducers/search-results";
-const rootReducer = combineReducers({ searchInput, searchData, searchResults });
+import { favoriteGifs } from "./reducers/favorite-gifs";
+const rootReducer = combineReducers({
+  searchInput,
+  searchData,
+  searchResults,
+  favoriteGifs
+});
 export const store = createStore(
   rootReducer,
   compose(

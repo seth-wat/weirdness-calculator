@@ -7,6 +7,7 @@ import WeirdnessSlider from "../../containers/weirdness-slider";
 import { Row } from "../Row";
 import { Title } from "../Title";
 import SearchResult from "../../containers/search-result";
+import LikeButton from "../../containers/like-button";
 
 export const App = () => {
   return (
@@ -23,6 +24,9 @@ export const App = () => {
           <Title />
           <Row styleOverrides={{ justifyContent: "center" }}>
             <SearchResult />
+          </Row>
+          <Row styleOverrides={{ justifyContent: "center" }}>
+            <LikeButton />
           </Row>
           <Row
             styleOverrides={{
