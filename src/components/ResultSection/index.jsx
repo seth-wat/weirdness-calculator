@@ -12,6 +12,7 @@ export const ResultSection = () => {
     <Column
       styleOverrides={{
         justifyContent: "space-between",
+        flexGrow: "1",
         marginTop: "1rem",
         marginBottom: "2rem"
       }}
