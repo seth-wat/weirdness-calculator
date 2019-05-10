@@ -10,6 +10,7 @@ import SearchResult from "../../containers/search-result";
 import LikeButton from "../../containers/like-button";
 import Favorites from "../../containers/favorites";
 import PreCalculationStatus from "../../containers/calculation-status";
+import WeirdnessScore from "../../containers/weirdness-score";
 
 export const App = () => {
   return (
@@ -89,6 +90,7 @@ export const App = () => {
             <Title title="YOUR LIKED GIFS" />
             <Favorites />
             <PreCalculationStatus />
+            <WeirdnessScore />
           </div>
         </Column>
       </Row>

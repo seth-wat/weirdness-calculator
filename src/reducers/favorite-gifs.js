@@ -69,3 +69,17 @@ export const isTermLikeable = createSelector(
     favoritesRemaining > 0 &&
     filled.every(gif => gif.term !== submittedTerm)
 );
+
+export const getWeirdnessScore = createSelector(
+  getFavorites,
+  favorites => {
+    const totalWeirdness = favorites.reduce((total, gif) => {
+      return total + gif.weirdnessLevel;
+    }, 0);
+    const averageWeirdness = totalWeirdness / MAX_FAVORITES;
+    const remainder = averageWeirdness % 1;
+    return remainder.toFixed(2) >= 0.5
+      ? Math.ceil(averageWeirdness)
+      : Math.floor(averageWeirdness);
+  }
+);
