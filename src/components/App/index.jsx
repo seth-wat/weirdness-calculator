@@ -9,6 +9,7 @@ import { Title } from "../Title";
 import SearchResult from "../../containers/search-result";
 import LikeButton from "../../containers/like-button";
 import Favorites from "../../containers/favorites";
+import PreCalculationStatus from "../../containers/calculation-status";
 
 export const App = () => {
   return (
@@ -87,6 +88,7 @@ export const App = () => {
           <div style={{ margin: "1rem" }}>
             <Title title="YOUR LIKED GIFS" />
             <Favorites />
+            <PreCalculationStatus />
           </div>
         </Column>
       </Row>
