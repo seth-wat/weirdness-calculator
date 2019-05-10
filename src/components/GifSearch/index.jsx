@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FormGroup, InputGroup } from "@blueprintjs/core";
+import { Button, FormGroup, InputGroup, Intent } from "@blueprintjs/core";
 import { Row } from "../Row";
 import { Column } from "../Column";
 
@@ -15,7 +15,9 @@ export const GifSearch = props => {
             value={searchTerm}
             onChange={handleChange}
           />
-          <Button onClick={search}>SEARCH</Button>
+          <Button intent={Intent.PRIMARY} onClick={search}>
+            SEARCH
+          </Button>
         </Row>
       </FormGroup>
     </Column>
