@@ -2,11 +2,12 @@ import { updateSearchInput } from "../actions/update-search-input";
 import { connect } from "react-redux";
 import { GifSearch } from "../components/GifSearch";
 import { submit } from "../thunks/submit";
-import { getSearchInput } from "../reducers/search-input";
+import { getSearchInput, isSearchEmpty } from "../reducers/search-input";
 import { clearResults } from "../actions/clear-results";
 
 export const mapStateToProps = state => ({
-  searchTerm: getSearchInput(state)
+  searchTerm: getSearchInput(state),
+  isSearchEmpty: isSearchEmpty(state)
 });
 
 export const mapDispatchToProps = dispatch => ({

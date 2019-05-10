@@ -4,13 +4,13 @@ import { Row } from "../Row";
 import { Column } from "../Column";
 
 export const GifSearch = props => {
-  const { handleChange, searchTerm, search } = props;
+  const { handleChange, searchTerm, search, isSearchEmpty } = props;
   return (
     <Column styleOverrides={{ margin: "3rem 0 0 1rem" }}>
       <form
         onSubmit={e => {
           e.preventDefault();
-          search();
+          !isSearchEmpty && search();
         }}
       >
         <FormGroup label="Search term" labelFor="search-input">
@@ -21,7 +21,11 @@ export const GifSearch = props => {
               value={searchTerm}
               onChange={handleChange}
             />
-            <Button intent={Intent.PRIMARY} onClick={search}>
+            <Button
+              type="submit"
+              intent={Intent.PRIMARY}
+              disabled={isSearchEmpty}
+            >
               SEARCH
             </Button>
           </Row>

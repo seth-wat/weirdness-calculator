@@ -1,5 +1,6 @@
 import produce from "immer";
 import { SET_SUBMITTED_TERM, SET_WEIRDNESS_LEVEL } from "../actions";
+import { createSelector } from "reselect";
 
 export const defaultState = {
   submittedTerm: "",

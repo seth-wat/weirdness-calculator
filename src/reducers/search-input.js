@@ -1,5 +1,6 @@
 import produce from "immer";
 import { UPDATE_SEARCH_INPUT } from "../actions";
+import { createSelector } from "reselect";
 
 export const defaultState = {
   value: ""
@@ -19,3 +20,7 @@ export const searchInput = (state = defaultState, action) => {
 };
 
 export const getSearchInput = state => state.searchInput.value;
+export const isSearchEmpty = createSelector(
+  getSearchInput,
+  term => term.length === 0
+);
