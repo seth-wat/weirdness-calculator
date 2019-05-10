@@ -12,6 +12,7 @@ export const LikeButton = props => {
       disabled={!isTermLikeable}
       onClick={() => {
         likeTerm();
+        ToastContainer.clear();
         ToastContainer.show({
           message:
             "Awesome! Search Again! You'll only be able to add one gif per search term.",
