@@ -10,7 +10,7 @@ import SearchResult from "../../containers/search-result";
 import LikeButton from "../../containers/like-button";
 import Favorites from "../../containers/favorites";
 import PreCalculationStatus from "../../containers/calculation-status";
-import WeirdnessScore from "../../containers/weirdness-score";
+import CalculateButton from "../../containers/calculate-button";
 
 export const App = () => {
   return (
@@ -24,7 +24,7 @@ export const App = () => {
       <Row styleOverrides={{ maxHeight: "10%", minHeight: "10%" }}>
         <Header />
       </Row>
-      <Row styleOvverides={{ maxHeight: "90%", minHeight: "90%" }}>
+      <Row styleOverrides={{ maxHeight: "90%", minHeight: "90%" }}>
         <Column
           styleOverrides={{
             width: "60%",
@@ -56,7 +56,7 @@ export const App = () => {
                 justifyContent: "space-between",
                 flexGrow: "1",
                 marginTop: "1rem",
-                marginBottom: "1rem"
+                marginBottom: "2rem"
               }}
             >
               <Title title="YOUR RESULT" />
@@ -81,19 +81,30 @@ export const App = () => {
         <Column
           styleOverrides={{
             width: "40%",
-            minHeight: "100vh",
+            minHeight: "100%",
+            maxHeight: "100%",
             backgroundColor: "#FFCC80",
             borderLeft: "1px solid #FFA726"
           }}
         >
-          <div style={{ margin: "1rem" }}>
+          <Column
+            styleOverrides={{
+              margin: "1rem 0 3rem 0",
+              height: "100%",
+              justifyContent: "space-between"
+            }}
+          >
             <Title title="YOUR LIKED GIFS" />
-            <Column styleOverrides={{ width: "90%", margin: "auto" }}>
+            <Column styleOverrides={{ width: "90%", margin: "0 auto 0 auto" }}>
               <Favorites />
             </Column>
-            <PreCalculationStatus />
-            <WeirdnessScore />
-          </div>
+            <div style={{ textAlign: "center" }}>
+              <CalculateButton />
+              <div style={{ marginTop: "1rem" }}>
+                <PreCalculationStatus />
+              </div>
+            </div>
+          </Column>
         </Column>
       </Row>
     </Column>

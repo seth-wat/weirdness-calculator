@@ -59,14 +59,20 @@ export const favoritesRemaining = createSelector(
   getFilledFavorites,
   filled => MAX_FAVORITES - filled.length
 );
+
+export const isFavoritesRemaining = createSelector(
+  favoritesRemaining,
+  remaining => remaining > 0
+);
+
 export const isTermLikeable = createSelector(
   getFilledFavorites,
   getSubmittedTerm,
   isResultEmpty,
-  favoritesRemaining,
-  (filled, submittedTerm, isResultEmpty, favoritesRemaining) =>
+  isFavoritesRemaining,
+  (filled, submittedTerm, isResultEmpty, isFavoritesRemaining) =>
     !isResultEmpty &&
-    favoritesRemaining > 0 &&
+    isFavoritesRemaining &&
     filled.every(gif => gif.term !== submittedTerm)
 );
 
