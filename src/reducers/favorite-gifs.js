@@ -1,24 +1,43 @@
 import { produce } from "immer";
-import { ADD_FAVORITE } from "../actions";
+import { ADD_FAVORITE, REMOVE_FAVORITE } from "../actions";
 import { createSelector } from "reselect";
 import { getSubmittedTerm } from "./search-data";
 import { isResultEmpty } from "./search-results";
 
-export const generateLikedGif = (term, weirdnessLevel, url) => ({
+export const generateFavorite = (
+  term = "",
+  weirdnessLevel = 0,
+  url = null
+) => ({
   term,
   weirdnessLevel,
   url
 });
 
 export const defaultState = {
-  data: []
+  filled: [],
+  empty: [
+    generateFavorite(),
+    generateFavorite(),
+    generateFavorite(),
+    generateFavorite(),
+    generateFavorite()
+  ]
 };
 
 export const favoriteGifs = (state = defaultState, action) => {
   return produce(state, draft => {
     switch (action.type) {
       case ADD_FAVORITE: {
-        draft.data.push(action.payload);
+        const favorite = action.payload;
+        draft.filled.push(favorite);
+        draft.empty.pop();
+        return draft;
+      }
+      case REMOVE_FAVORITE: {
+        const removeTerm = action.payload;
+        draft.filled = draft.filled.filter(gif => gif.term !== removeTerm);
+        draft.empty.push(generateFavorite());
         return draft;
       }
       default: {
@@ -29,14 +48,24 @@ export const favoriteGifs = (state = defaultState, action) => {
 };
 
 export const MAX_FAVORITES = 5;
-
-export const getLikedGifs = state => state.favoriteGifs.data;
+export const getFilledFavorites = state => state.favoriteGifs.filled;
+export const getEmptyFavorites = state => state.favoriteGifs.empty;
+export const getFavorites = createSelector(
+  getFilledFavorites,
+  getEmptyFavorites,
+  (filled, empty) => [...filled, ...empty]
+);
+export const favoritesRemaining = createSelector(
+  getFilledFavorites,
+  filled => MAX_FAVORITES - filled.length
+);
 export const isTermLikeable = createSelector(
-  getLikedGifs,
+  getFilledFavorites,
   getSubmittedTerm,
   isResultEmpty,
-  (likedGifs, submittedTerm, isResultEmpty) =>
+  favoritesRemaining,
+  (filled, submittedTerm, isResultEmpty, favoritesRemaining) =>
     !isResultEmpty &&
-    likedGifs.length < MAX_FAVORITES &&
-    likedGifs.every(gif => gif.term !== submittedTerm)
+    favoritesRemaining > 0 &&
+    filled.every(gif => gif.term !== submittedTerm)
 );
