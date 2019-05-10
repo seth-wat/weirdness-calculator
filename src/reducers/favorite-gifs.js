@@ -1,5 +1,5 @@
 import { produce } from "immer";
-import { ADD_FAVORITE, REMOVE_FAVORITE } from "../actions";
+import { ADD_FAVORITE, CLEAR_FAVORITES, REMOVE_FAVORITE } from "../actions";
 import { createSelector } from "reselect";
 import { getSubmittedTerm } from "./search-data";
 import { isResultEmpty } from "./search-results";
@@ -38,6 +38,10 @@ export const favoriteGifs = (state = defaultState, action) => {
         const removeTerm = action.payload;
         draft.filled = draft.filled.filter(gif => gif.term !== removeTerm);
         draft.empty.push(generateFavorite());
+        return draft;
+      }
+      case CLEAR_FAVORITES: {
+        draft = defaultState;
         return draft;
       }
       default: {

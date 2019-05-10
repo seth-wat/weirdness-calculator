@@ -1,11 +1,15 @@
 import produce from "immer";
-import { SET_SUBMITTED_TERM, SET_WEIRDNESS_LEVEL } from "../actions";
-import { createSelector } from "reselect";
+import {
+  CLEAR_SEARCH_DATA,
+  SET_SUBMITTED_TERM,
+  SET_WEIRDNESS_LEVEL
+} from "../actions";
 
 export const defaultState = {
   submittedTerm: "",
   weirdnessLevel: 0
 };
+
 export const searchData = (state = defaultState, action) => {
   return produce(state, draft => {
     switch (action.type) {
@@ -17,6 +21,10 @@ export const searchData = (state = defaultState, action) => {
         draft.weirdnessLevel = action.payload;
         return draft;
       }
+      case CLEAR_SEARCH_DATA: {
+        draft = defaultState;
+        return draft;
+      }
       default: {
         return state;
       }
@@ -25,5 +33,4 @@ export const searchData = (state = defaultState, action) => {
 };
 
 export const getSubmittedTerm = state => state.searchData.submittedTerm;
-
 export const getWeirdnessLevel = state => state.searchData.weirdnessLevel;
