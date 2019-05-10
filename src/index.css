@@ -13,10 +13,11 @@ code {
     monospace;
 }
 
-h1,
-h4 {
+h1 {
   margin-left: 1rem;
-  padding: 1.5rem 0 1.5rem 0;
+}
+h4 {
+  margin: 0 0 1rem 1rem;
 }
 
 p {
@@ -24,6 +25,7 @@ p {
 }
 
 .gif-title {
+  margin-top: 0;
   margin-bottom: 0.5rem;
   text-align: center;
 }

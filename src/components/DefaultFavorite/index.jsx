@@ -17,7 +17,7 @@ export const DefaultFavorite = () => {
           justifyContent: "center",
           border: "1px solid #000",
           backgroundColor: EMPTY_GIF_BG,
-          margin: "0 0 0 1rem"
+          margin: "0 0 1rem 0"
         }}
       >
         <span className={"default-gif"}>🤪</span>

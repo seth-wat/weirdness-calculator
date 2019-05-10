@@ -4,7 +4,7 @@ import { Column } from "../Column";
 
 export const IntroParagraphs = props => {
   return (
-    <Column styleOverrides={{ marginTop: "2rem" }}>
+    <Column>
       <p className="bp3-ui-text">
         Find out how weird you are by selecting the GIFs that make you laugh.
         We’ll show you the least weird ones to start, but you can move the

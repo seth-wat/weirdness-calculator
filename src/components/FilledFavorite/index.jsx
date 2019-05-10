@@ -8,7 +8,7 @@ export const FilledFavorite = props => {
   const { gif } = props;
   const { url, term } = gif;
   return (
-    <Column styleOverrides={{ margin: "0 0 0 1rem" }}>
+    <Column styleOverrides={{ margin: "0 0 1rem 0" }}>
       <h5 className="gif-title">{term}</h5>
       <div
         style={{
