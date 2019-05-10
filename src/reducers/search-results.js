@@ -1,5 +1,5 @@
 import produce from "immer";
-import { SET_RESULT } from "../actions";
+import { CLEAR_RESULTS, SET_RESULT } from "../actions";
 import { getSubmittedTerm, getWeirdnessLevel } from "./search-data";
 import { createSelector } from "reselect";
 
@@ -31,6 +31,10 @@ export const searchResults = (state = defaultState, action) => {
       case SET_RESULT: {
         const { weirdnessLevel, result } = action.payload;
         draft.data[weirdnessLevel] = result;
+        return draft;
+      }
+      case CLEAR_RESULTS: {
+        draft = defaultState;
         return draft;
       }
       default: {

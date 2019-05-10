@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { GifSearch } from "../components/GifSearch";
 import { submit } from "../thunks/submit";
 import { getSearchInput } from "../reducers/search-input";
+import { clearResults } from "../actions/clear-results";
 
 export const mapStateToProps = state => ({
   searchTerm: getSearchInput(state)
@@ -14,6 +15,7 @@ export const mapDispatchToProps = dispatch => ({
     dispatch(action);
   },
   search: () => {
+    dispatch(clearResults());
     dispatch(submit);
   }
 });
