@@ -5,6 +5,7 @@ import { Header } from "../Header";
 import { SearchSection } from "../SearchSection";
 import { ResultSection } from "../ResultSection";
 import { FavoritesSection } from "../FavoritesSection";
+import { BODY_BORDER_COLOR, BODY_COLOR } from "../../constants";
 
 export const CalculatorRoute = () => {
   return (
@@ -15,10 +16,10 @@ export const CalculatorRoute = () => {
         overflow: "hidden"
       }}
     >
-      <Row styleOverrides={{ maxHeight: "10%", minHeight: "10%" }}>
+      <Row styleOverrides={{ minHeight: "10%", maxHeight: "10%" }}>
         <Header />
       </Row>
-      <Row styleOverrides={{ maxHeight: "90%", minHeight: "90%" }}>
+      <Row styleOverrides={{ minHeight: "90%", maxHeight: "90%" }}>
         <Column
           styleOverrides={{
             width: "60%",
@@ -37,11 +38,11 @@ export const CalculatorRoute = () => {
           </Column>
           <Column
             styleOverrides={{
-              backgroundColor: "#FFCC80",
+              backgroundColor: BODY_COLOR,
               minHeight: "60%",
               maxHeight: "60%",
               justifyContent: "center",
-              borderTop: "1px solid #FFA726"
+              borderTop: `1px solid ${BODY_BORDER_COLOR}`
             }}
           >
             <ResultSection />
@@ -51,9 +52,8 @@ export const CalculatorRoute = () => {
           styleOverrides={{
             width: "40%",
             minHeight: "100%",
-            maxHeight: "100%",
-            backgroundColor: "#FFCC80",
-            borderLeft: "1px solid #FFA726"
+            backgroundColor: BODY_COLOR,
+            borderLeft: `1px solid ${BODY_BORDER_COLOR}`
           }}
         >
           <FavoritesSection />

@@ -5,3 +5,7 @@ export const FAVORITE_GIF_HEIGHT = "125px";
 export const EMPTY_GIF_BG = "#E0E0E0";
 export const GIF_BORDER = "1px solid #9E9E9E";
 export const GIF_BORDER_RADIUS = "2px";
+export const HEADER_COLOR = "#FFB74D";
+export const HEADER_BORDER_COLOR = "#FFA726";
+export const BODY_COLOR = "#FFCC80";
+export const BODY_BORDER_COLOR = "#FFA726";

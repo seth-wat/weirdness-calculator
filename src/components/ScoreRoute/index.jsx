@@ -6,6 +6,7 @@ import WeirdnessScore from "../../containers/weirdness-score";
 import { ScoredFavorites } from "../../containers/favorites";
 import { Title } from "../Title";
 import StartOverButton from "../../containers/start-over-button";
+import { BODY_COLOR } from "../../constants";
 
 export const ScoreRoute = () => {
   return (
@@ -23,7 +24,8 @@ export const ScoreRoute = () => {
         styleOverrides={{
           maxHeight: "90%",
           minHeight: "90%",
-          minWidth: "100%"
+          minWidth: "100%",
+          backgroundColor: BODY_COLOR
         }}
       >
         <Column
