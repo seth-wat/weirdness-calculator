@@ -14,7 +14,7 @@ export const DefaultFavorite = () => {
         styleOverrides={{
           width: FAVORITE_GIF_WIDTH,
           height: FAVORITE_GIF_HEIGHT,
-          justifyContent: "center",
+          alignContent: "center",
           border: "1px solid #000",
           backgroundColor: EMPTY_GIF_BG,
           margin: "0 0 1rem 0"
