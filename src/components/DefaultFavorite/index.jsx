@@ -2,25 +2,31 @@ import { Column } from "../Column";
 import {
   EMPTY_GIF_BG,
   FAVORITE_GIF_HEIGHT,
-  FAVORITE_GIF_WIDTH
+  FAVORITE_GIF_WIDTH,
+  GIF_BORDER,
+  GIF_BORDER_RADIUS
 } from "../../constants";
 import React from "react";
+import { Row } from "../Row";
 
 export const DefaultFavorite = () => {
   return (
     <Column>
-      <h5 className="gif-title">Add some favorites!</h5>
-      <Column
-        styleOverrides={{
-          width: FAVORITE_GIF_WIDTH,
-          height: FAVORITE_GIF_HEIGHT,
-          alignContent: "center",
-          border: "1px solid #000",
-          backgroundColor: EMPTY_GIF_BG,
-          margin: "0 0 1rem 0"
-        }}
-      >
-        <span className={"default-gif"}>🤪</span>
+      <Column>
+        <h5 className="gif-title">Add a favorite!</h5>
+        <Column
+          styleOverrides={{
+            width: FAVORITE_GIF_WIDTH,
+            height: FAVORITE_GIF_HEIGHT,
+            justifyContent: "center",
+            border: GIF_BORDER,
+            borderRadius: GIF_BORDER_RADIUS,
+            backgroundColor: EMPTY_GIF_BG,
+            margin: "0 0 1rem 0"
+          }}
+        >
+          <span style={{ fontSize: "5rem", textAlign: "center" }}>🤪</span>
+        </Column>
       </Column>
     </Column>
   );

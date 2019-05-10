@@ -88,7 +88,9 @@ export const App = () => {
         >
           <div style={{ margin: "1rem" }}>
             <Title title="YOUR LIKED GIFS" />
-            <Favorites />
+            <Column styleOverrides={{ width: "90%", margin: "auto" }}>
+              <Favorites />
+            </Column>
             <PreCalculationStatus />
             <WeirdnessScore />
           </div>

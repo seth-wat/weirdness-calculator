@@ -4,7 +4,9 @@ import { Column } from "../Column";
 import {
   RESULT_GIF_HEIGHT,
   RESULT_GIF_WIDTH,
-  EMPTY_GIF_BG
+  EMPTY_GIF_BG,
+  GIF_BORDER_RADIUS,
+  GIF_BORDER
 } from "../../constants";
 
 export const DefaultResult = props => {
@@ -21,7 +23,8 @@ export const DefaultResult = props => {
           width: RESULT_GIF_WIDTH,
           height: RESULT_GIF_HEIGHT,
           justifyContent: "center",
-          border: "1px solid #000",
+          border: GIF_BORDER,
+          borderRadius: GIF_BORDER_RADIUS,
           backgroundColor: EMPTY_GIF_BG
         }}
       >

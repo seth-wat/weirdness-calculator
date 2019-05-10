@@ -1,5 +1,10 @@
 import { Column } from "../Column";
-import { RESULT_GIF_HEIGHT, RESULT_GIF_WIDTH } from "../../constants";
+import {
+  GIF_BORDER,
+  GIF_BORDER_RADIUS,
+  RESULT_GIF_HEIGHT,
+  RESULT_GIF_WIDTH
+} from "../../constants";
 import React from "react";
 import { Gif } from "../Gif";
 

@@ -33,3 +33,9 @@ p {
 .like-button {
   width: 6rem;
 }
+
+span.default-gif {
+  text-align: center;
+  margin: 0;
+  font-size: 8rem;
+}
