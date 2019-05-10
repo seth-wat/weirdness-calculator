@@ -4,7 +4,7 @@ import { Row } from "../Row";
 export const Header = () => (
   <Row
     styleOverrides={{
-      backgroundColor: "#FF9800",
+      backgroundColor: "#FFA726",
       width: "100%",
       border: "1px solid #FFA726"
     }}

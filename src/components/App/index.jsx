@@ -1,16 +1,10 @@
 import React from "react";
-import { Header } from "../Header";
 import { Column } from "../Column";
-import { IntroParagraphs } from "../IntroParagraphs";
-import GifSearch from "../../containers/gif-search";
-import WeirdnessSlider from "../../containers/weirdness-slider";
 import { Row } from "../Row";
-import { Title } from "../Title";
-import SearchResult from "../../containers/search-result";
-import LikeButton from "../../containers/like-button";
-import Favorites from "../../containers/favorites";
-import PreCalculationStatus from "../../containers/calculation-status";
-import CalculateButton from "../../containers/calculate-button";
+import { Header } from "../Header";
+import { SearchSection } from "../SearchSection";
+import { ResultSection } from "../ResultSection";
+import { FavoritesSection } from "../FavoritesSection";
 
 export const App = () => {
   return (
@@ -39,8 +33,7 @@ export const App = () => {
               justifyContent: "center"
             }}
           >
-            <IntroParagraphs />
-            <GifSearch />
+            <SearchSection />
           </Column>
           <Column
             styleOverrides={{
@@ -51,31 +44,7 @@ export const App = () => {
               borderTop: "1px solid #FFA726"
             }}
           >
-            <Column
-              styleOverrides={{
-                justifyContent: "space-between",
-                flexGrow: "1",
-                marginTop: "1rem",
-                marginBottom: "2rem"
-              }}
-            >
-              <Title title="YOUR RESULT" />
-              <Row styleOverrides={{ justifyContent: "center" }}>
-                <SearchResult />
-              </Row>
-              <Row styleOverrides={{ justifyContent: "center" }}>
-                <LikeButton />
-              </Row>
-              <Row
-                styleOverrides={{
-                  margin: "0rem 1rem 0rem 1rem",
-                  alignSelf: "center",
-                  maxWidth: "75%"
-                }}
-              >
-                <WeirdnessSlider />
-              </Row>
-            </Column>
+            <ResultSection />
           </Column>
         </Column>
         <Column
@@ -87,24 +56,7 @@ export const App = () => {
             borderLeft: "1px solid #FFA726"
           }}
         >
-          <Column
-            styleOverrides={{
-              margin: "1rem 0 3rem 0",
-              height: "100%",
-              justifyContent: "space-between"
-            }}
-          >
-            <Title title="YOUR LIKED GIFS" />
-            <Column styleOverrides={{ width: "90%", margin: "0 auto 0 auto" }}>
-              <Favorites />
-            </Column>
-            <div style={{ textAlign: "center" }}>
-              <CalculateButton />
-              <div style={{ marginTop: "1rem" }}>
-                <PreCalculationStatus />
-              </div>
-            </div>
-          </Column>
+          <FavoritesSection />
         </Column>
       </Row>
     </Column>
