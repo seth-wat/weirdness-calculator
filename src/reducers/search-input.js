@@ -1,5 +1,5 @@
 import produce from "immer";
-import { UPDATE_SEARCH_INPUT } from "../actions";
+import { CLEAR_SEARCH_INPUT, UPDATE_SEARCH_INPUT } from "../actions";
 import { createSelector } from "reselect";
 
 export const defaultState = {
@@ -10,6 +10,10 @@ export const searchInput = (state = defaultState, action) => {
     switch (action.type) {
       case UPDATE_SEARCH_INPUT: {
         draft.value = action.payload;
+        return draft;
+      }
+      case CLEAR_SEARCH_INPUT: {
+        draft = defaultState;
         return draft;
       }
       default: {
