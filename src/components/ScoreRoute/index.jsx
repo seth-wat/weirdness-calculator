@@ -38,7 +38,7 @@ export const ScoreRoute = () => {
           <div style={{ textAlign: "center", marginTop: "4rem" }}>
             <WeirdnessScore />
           </div>
-          <Title title={"The GIFs you liked"} />
+          <Title title={"THE GIFS YOU LIKED"} />
           <div style={{ margin: "0 1rem 0 1rem" }}>
             <ScoredFavorites />
           </div>
