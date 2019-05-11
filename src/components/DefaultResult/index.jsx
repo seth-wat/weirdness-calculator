@@ -29,6 +29,8 @@ export const DefaultResult = props => {
         }}
       >
         <span
+          role="img"
+          aria-label="default-result"
           className={isResultLoading ? "default-gif-loading" : "default-gif"}
         >
           🤪

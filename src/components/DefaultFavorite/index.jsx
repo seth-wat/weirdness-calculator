@@ -7,7 +7,6 @@ import {
   GIF_BORDER_RADIUS
 } from "../../constants";
 import React from "react";
-import { Row } from "../Row";
 
 export const DefaultFavorite = () => {
   return (
@@ -25,7 +24,13 @@ export const DefaultFavorite = () => {
             margin: "0 0 1rem 0"
           }}
         >
-          <span style={{ fontSize: "5rem", textAlign: "center" }}>🤪</span>
+          <span
+            role="img"
+            aria-label="default-favorite"
+            style={{ fontSize: "5rem", textAlign: "center" }}
+          >
+            🤪
+          </span>
         </Column>
       </Column>
     </Column>

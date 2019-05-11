@@ -22,7 +22,9 @@ export const ErrorResult = () => {
           backgroundColor: EMPTY_GIF_BG
         }}
       >
-        <span className="default-gif">😞</span>
+        <span role="img" aria-label="error-result" className="default-gif">
+          😞
+        </span>
       </Column>
     </Column>
   );

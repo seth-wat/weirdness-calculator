@@ -6,6 +6,7 @@ export const Gif = props => {
   return (
     <img
       style={{ border: GIF_BORDER, borderRadius: GIF_BORDER_RADIUS }}
+      alt=""
       src={url}
       width={width}
       height={height}

@@ -1,11 +1,5 @@
 import { Column } from "../Column";
-import {
-  FAVORITE_GIF_HEIGHT,
-  FAVORITE_GIF_WIDTH,
-  GIF_BORDER,
-  GIF_BORDER_RADIUS,
-  RESULT_GIF_WIDTH
-} from "../../constants";
+import { FAVORITE_GIF_HEIGHT, FAVORITE_GIF_WIDTH } from "../../constants";
 import React from "react";
 import { Gif } from "../Gif";
 import UnlikeButton from "../../containers/unlike-button";
