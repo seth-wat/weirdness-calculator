@@ -12,7 +12,7 @@ export const IntroParagraphs = props => {
       </p>
       <br />
       <p className="bp3-ui-text">
-        When you find a GIF you like, press the <em>Like button</em>. Once you
+        When you find a GIF you like, press the <em>Like</em> button. Once you
         like 5 GIFs, we’ll show you how weird you are.
       </p>
     </Column>
