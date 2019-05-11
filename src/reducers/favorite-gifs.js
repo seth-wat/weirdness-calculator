@@ -7,11 +7,13 @@ import { isResultEmpty } from "./search-results";
 export const generateFavorite = (
   term = "",
   weirdnessLevel = 0,
-  url = null
+  url = null,
+  title = null
 ) => ({
   term,
   weirdnessLevel,
-  url
+  url,
+  title
 });
 
 export const defaultState = {

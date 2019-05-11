@@ -1,18 +1,13 @@
 import { Column } from "../Column";
-import {
-  GIF_BORDER,
-  GIF_BORDER_RADIUS,
-  RESULT_GIF_HEIGHT,
-  RESULT_GIF_WIDTH
-} from "../../constants";
+import { RESULT_GIF_HEIGHT, RESULT_GIF_WIDTH } from "../../constants";
 import React from "react";
 import { Gif } from "../Gif";
 
 export const FilledResult = props => {
-  const { searchTerm, resultURL } = props;
+  const { title, resultURL } = props;
   return (
     <Column>
-      <h5 className="gif-title">{searchTerm}</h5>
+      <h5 className="gif-title">{title}</h5>
       <Gif
         width={RESULT_GIF_WIDTH}
         height={RESULT_GIF_HEIGHT}

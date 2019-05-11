@@ -13,7 +13,7 @@ export const DefaultResult = props => {
   const { isResultLoading } = props;
   return (
     <Column>
-      <h5 className="gif-title">
+      <h5 className="gif-title-default">
         {isResultLoading
           ? "Your gif is being retrieved."
           : "Enter a search term!"}

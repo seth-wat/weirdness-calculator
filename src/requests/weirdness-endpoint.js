@@ -9,4 +9,10 @@ export const getGif = async (term, weirdness) => {
   return extractGifFromResponse(json);
 };
 
-export const extractGifFromResponse = json => json.data.images.original.url;
+export const extractGifFromResponse = json => {
+  const { data } = json;
+  return {
+    url: data.images.original.url,
+    title: data.title
+  };
+};

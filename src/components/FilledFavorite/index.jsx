@@ -12,10 +12,10 @@ import UnlikeButton from "../../containers/unlike-button";
 
 export const FilledFavorite = props => {
   const { gif } = props;
-  const { url, term } = gif;
+  const { url, term, title } = gif;
   return (
     <Column styleOverrides={{ margin: "0 0 1rem 0" }}>
-      <h5 className="gif-title">{term}</h5>
+      <h5 className="gif-title">{title}</h5>
       <div
         style={{
           position: "relative",

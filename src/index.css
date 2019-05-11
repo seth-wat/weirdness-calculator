@@ -28,6 +28,13 @@ p {
   margin-top: 0;
   margin-bottom: 0.5rem;
   text-align: center;
+  text-transform: capitalize;
+}
+
+.gif-title-default {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .like-button {

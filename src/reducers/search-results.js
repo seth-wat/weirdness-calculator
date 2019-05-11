@@ -6,8 +6,9 @@ import { createSelector } from "reselect";
 export const generateResult = (
   isLoading = false,
   url = null,
+  title = null,
   didError = false
-) => ({ isLoading, url, didError });
+) => ({ isLoading, url, title, didError });
 
 export const defaultState = {
   data: {
@@ -66,6 +67,11 @@ export const getResultURL = createSelector(
   result => result.url
 );
 
+export const getResultTitle = createSelector(
+  getResultByWeirdness,
+  result => shortenTitle(result.title)
+);
+
 export const isResultEmpty = createSelector(
   getResultURL,
   url => {
@@ -82,3 +88,12 @@ export const isResultLoading = createSelector(
   getResultByWeirdness,
   result => result.isLoading
 );
+
+export const shortenTitle = title => {
+  if (title.length > 20) {
+    const shorter = title.substr(0, 20);
+    const end = shorter.lastIndexOf(" ");
+    return end === -1 ? shorter : shorter.substr(0, end);
+  }
+  return title;
+};

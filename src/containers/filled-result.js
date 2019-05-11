@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
-import { getResultURL } from "../reducers/search-results";
-import { getSubmittedTerm } from "../reducers/search-data";
+import { getResultTitle, getResultURL } from "../reducers/search-results";
 import { FilledResult } from "../components/FilledResult";
 
 export const mapStateToProps = state => ({
-  searchTerm: getSubmittedTerm(state),
+  title: getResultTitle(state),
   resultURL: getResultURL(state)
 });
 

@@ -13,7 +13,7 @@ export const DefaultFavorite = () => {
   return (
     <Column>
       <Column>
-        <h5 className="gif-title">Add a favorite!</h5>
+        <h5 className="gif-title-default">Add a favorite!</h5>
         <Column
           styleOverrides={{
             width: FAVORITE_GIF_WIDTH,

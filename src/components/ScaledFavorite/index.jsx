@@ -5,10 +5,10 @@ import { Gif } from "../Gif";
 
 export const ScaledFavorite = props => {
   const { gif } = props;
-  const { url, term, weirdnessLevel } = gif;
+  const { url, title, weirdnessLevel } = gif;
   return (
     <Column styleOverrides={{ margin: "0 0 1rem 0" }}>
-      <h5 className="gif-title">{term}</h5>
+      <h5 className="gif-title">{title}</h5>
       <Gif width={FAVORITE_GIF_WIDTH} height={FAVORITE_GIF_HEIGHT} url={url} />
       <h5
         style={{ alignSelf: "center", margin: "0.5rem 0 0 0" }}

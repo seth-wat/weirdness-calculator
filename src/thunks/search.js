@@ -14,11 +14,13 @@ export const search = async (dispatch, getState) => {
   if (resultShouldBeFetched(state)) {
     try {
       dispatch(setResult(weirdnessLevel, generateResult(true)));
-      const gif = await getGif(searchTerm, weirdnessLevel);
-      dispatch(setResult(weirdnessLevel, generateResult(false, gif)));
+      const { url, title } = await getGif(searchTerm, weirdnessLevel);
+      dispatch(setResult(weirdnessLevel, generateResult(false, url, title)));
     } catch (e) {
       console.log(e);
-      dispatch(setResult(weirdnessLevel, generateResult(false, null, true)));
+      dispatch(
+        setResult(weirdnessLevel, generateResult(false, null, null, true))
+      );
     }
   }
 };
