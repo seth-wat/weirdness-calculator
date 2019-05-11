@@ -4,16 +4,16 @@ import { searchData } from "./reducers/search-data";
 import thunk from "redux-thunk";
 import { searchResults } from "./reducers/search-results";
 import { favoriteGifs } from "./reducers/favorite-gifs";
+import { composeWithDevTools } from "redux-devtools-extension";
+
 const rootReducer = combineReducers({
   searchInput,
   searchData,
   searchResults,
   favoriteGifs
 });
+
 export const store = createStore(
   rootReducer,
-  compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  composeWithDevTools(applyMiddleware(thunk))
 );
