@@ -14,7 +14,7 @@ export const CalculationStatus = props => {
           } to calculate your score`}
         </p>
       ) : (
-        <p>It's time to calculate your score!</p>
+        <p className="favorite-status">It's time to calculate your score!</p>
       )}
     </React.Fragment>
   );
