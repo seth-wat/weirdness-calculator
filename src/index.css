@@ -53,3 +53,7 @@ span.default-gif {
   margin: 0;
   font-size: 8rem;
 }
+
+p.favorite-status {
+  font-weight: bold;
+}

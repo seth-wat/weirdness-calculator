@@ -7,7 +7,7 @@ export const CalculationStatus = props => {
   return (
     <React.Fragment>
       {mustLike ? (
-        <p>
+        <p className="favorite-status">
           You must <em>Like</em>
           {` ${gifsRemaining} more ${
             isPlural ? "GIFs" : "GIF"
