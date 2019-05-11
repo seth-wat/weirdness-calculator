@@ -7,7 +7,7 @@ export const ScoreFavorites = props => {
   return (
     <Row styleOverrides={{ justifyContent: "space-between" }}>
       {likedGifs.map(gif => (
-        <ScaledFavorite gif={gif} />
+        <ScaledFavorite key={gif.term} gif={gif} />
       ))}
     </Row>
   );

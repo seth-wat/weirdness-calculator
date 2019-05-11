@@ -6,8 +6,12 @@ export const Favorites = props => {
   const { likedGifs } = props;
   return (
     <Row styleOverrides={{ flexWrap: "wrap", justifyContent: "space-around" }}>
-      {likedGifs.map(gif =>
-        gif.url === null ? <DefaultFavorite /> : <FilledFavorite gif={gif} />
+      {likedGifs.map((gif, index) =>
+        gif.url === null ? (
+          <DefaultFavorite key={index} />
+        ) : (
+          <FilledFavorite key={gif.term} gif={gif} />
+        )
       )}
     </Row>
   );
